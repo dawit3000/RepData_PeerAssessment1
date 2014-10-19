@@ -186,7 +186,7 @@ datanew[13000:13007,]
 ## 2857      350     0 2012-11-15   0.00000
 ```
 
-4 Following is a histogram of the total number of steps taken each day. We also report separately the mean and median total number of steps taken per day.
+4. Following is a histogram of the total number of steps taken each day. We also report separately the mean and median total number of steps taken per day.
 
 
 ```r
@@ -229,6 +229,7 @@ datanew$daytype<-weekdays(as.Date(datanew$date))
 ## Collapse the seven day names to weekday or weekend
 datanew$daytype[datanew$daytype=="Saturday"|datanew$daytype=="Sunday"]<-"weekend"
 datanew$daytype[datanew$daytype!="weekend"]<-"weekday"
+## oh yeah, this is how it is done in just 3 lines, requiring no looping!
 head(datanew)
 ```
 
@@ -240,10 +241,6 @@ head(datanew)
 ## 205       15 0.15094 2012-10-01   0.15094 weekday
 ## 264       20 0.07547 2012-10-01   0.07547 weekday
 ## 327       25 2.09434 2012-10-01   2.09434 weekday
-```
-
-```r
-## oh yeah, this is how it is done in just 3 lines, requiring no looping!
 ```
 
 2. Following is a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). We use the lattice system of plotting.

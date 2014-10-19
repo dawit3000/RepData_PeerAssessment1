@@ -352,7 +352,9 @@ head(datanew)
 ## 2857      350     0 2012-11-15   0.00000
 </code></pre>
 
-<p>4 Following is a histogram of the total number of steps taken each day. We also report separately the mean and median total number of steps taken per day.</p>
+<ol>
+<li>Following is a histogram of the total number of steps taken each day. We also report separately the mean and median total number of steps taken per day.</li>
+</ol>
 
 <pre><code class="r">total_dsteps_new&lt;-tapply(datanew$steps,datanew$date,sum)
 hist(total_dsteps_new,xlab = &quot;# steps taken each day&quot;,col=&quot;yellow&quot;,main=&quot;# steps by day&quot;)
@@ -389,6 +391,7 @@ datanew$daytype&lt;-weekdays(as.Date(datanew$date))
 ## Collapse the seven day names to weekday or weekend
 datanew$daytype[datanew$daytype==&quot;Saturday&quot;|datanew$daytype==&quot;Sunday&quot;]&lt;-&quot;weekend&quot;
 datanew$daytype[datanew$daytype!=&quot;weekend&quot;]&lt;-&quot;weekday&quot;
+## oh yeah, this is how it is done in just 3 lines, requiring no looping!
 head(datanew)
 </code></pre>
 
@@ -399,9 +402,6 @@ head(datanew)
 ## 205       15 0.15094 2012-10-01   0.15094 weekday
 ## 264       20 0.07547 2012-10-01   0.07547 weekday
 ## 327       25 2.09434 2012-10-01   2.09434 weekday
-</code></pre>
-
-<pre><code class="r">## oh yeah, this is how it is done in just 3 lines, requiring no looping!
 </code></pre>
 
 <ol>
